@@ -1,0 +1,48 @@
+# Windows
+[Dd]esktop.ini
+Thumbs.db
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+
+# Node.js
+node_modules/
+
+# WeChat Mini Program specific
+miniprogram_npm/
+node_modules/
+package-lock.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build & Debug
+dist/
+.sourcemap/
+
+# Local Configuration
+project.private.config.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# Cloud Functions
+cloudfunctions/**/node_modules/
+cloudfunctions/**/.env
+
+# Testing
+coverage/

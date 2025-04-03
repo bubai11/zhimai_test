@@ -1,0 +1,64 @@
+<!--pages/remind-create/remind-create.wxml-->
+<!-- 顶部标题+按钮 -->
+<view class="top">
+  <view class="button" bind:tap="goBack">
+    取消
+  </view>
+  <view class="title">
+    新建活动
+  </view>
+  <view class="button" bind:tap="onSave">
+    保存
+  </view>
+</view>
+
+<!-- 填写标题+时间 -->
+<view class="remind-box">
+  <!-- 填写标题 -->
+  <view class="title">
+    <input type="text" model:value="{{title}}" placeholder="标题"/>
+  </view>
+  <view class="font">
+    提醒时间
+  </view>
+  <view class="remind">
+    <!-- 开始时间 -->
+    <view class="begin">
+      <picker class="date" mode="date" value="{{beginDate}}" bindchange="onBeginDateChange">
+        <!-- 开始日期 -->
+        <view class="picker">
+          {{beginDate}}
+        </view>
+      </picker>
+      <picker class="time" mode="time" value="{{beginTime}}" bindchange="onBeginTimeChange">
+        <!-- 开始时分 -->
+        <view class="picker">
+          {{beginTime}}
+        </view>
+      </picker>
+    </view>
+    <view class="font">
+      到
+    </view>
+    <!-- 结束时间 -->
+    <view class="end">
+      <picker class="date" mode="date" value="{{endDate}}" bindchange="onEndDateChange">
+        <!-- 结束日期 -->
+        <view class="picker">
+          {{endDate}}
+        </view>
+      </picker>
+      <picker class="time" mode="time" value="{{endTime}}" bindchange="onEndTimeChange">
+        <!-- 结束时分 -->
+        <view class="picker">
+          {{endTime}}
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+
+<!-- 底部删除按钮 -->
+<view class="delete" bind:tap="onDelete">
+  删除
+</view>

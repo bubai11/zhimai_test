@@ -1,0 +1,152 @@
+/* 容器样式 */
+.container {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+/* 头像部分 */
+.avatar-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 180rpx;
+  height: 180rpx;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+}
+
+.avatar-wrapper::after {
+  border: none;
+}
+
+.avatar {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  border: 4rpx solid #fff;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 信息列表 */
+.info-list {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 30rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+}
+
+.info-item {
+  margin-bottom: 30rpx;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  display: block;
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 16rpx;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  height: 88rpx;
+  background: #f5f7fa;
+  border-radius: 12rpx;
+  padding: 0 24rpx;
+  font-size: 28rpx;
+  color: #333;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2rpx #2785FF;
+}
+
+.picker {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #f5f7fa;
+  border-radius: 12rpx;
+  padding: 0 24rpx;
+  font-size: 28rpx;
+  color: #333;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.picker.placeholder {
+  color: #999;
+}
+
+.picker:active {
+  opacity: 0.8;
+}
+
+/* 保存按钮 */
+.button-section {
+  margin-top: 60rpx;
+  padding: 0 30rpx;
+}
+
+.save-btn {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: linear-gradient(135deg, #2785FF, #2B6FF3);
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 500;
+  border-radius: 44rpx;
+  border: none;
+  box-shadow: 0 8rpx 16rpx rgba(39, 133, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.save-btn:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 4rpx 8rpx rgba(39, 133, 255, 0.1);
+}
+
+.save-btn::after {
+  border: none;
+}
+
+/* 添加动画效果 */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-item {
+  animation: slideUp 0.4s ease;
+  animation-fill-mode: both;
+}
+
+.info-item:nth-child(1) { animation-delay: 0.1s; }
+.info-item:nth-child(2) { animation-delay: 0.2s; }
+.info-item:nth-child(3) { animation-delay: 0.3s; }
+.info-item:nth-child(4) { animation-delay: 0.4s; }
+.info-item:nth-child(5) { animation-delay: 0.5s; }
+.info-item:nth-child(6) { animation-delay: 0.6s; }
+.info-item:nth-child(7) { animation-delay: 0.7s; } 

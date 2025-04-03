@@ -1,0 +1,78 @@
+<!--pages/info/info.wxml-->
+
+<!-- 顶部 -->
+<view class="top">
+  <!-- "分类"按钮 -->
+  <navigator class="classify" url="/pages/classify2/classify2">
+    信息资讯分类
+  </navigator>
+  <!-- 跳转"搜索页面" -->
+  <navigator class="search" url="/pages/search/search">
+    <image src="/assets/public/search.png" />
+  </navigator>
+</view>
+
+<!-- 置顶通知 -->
+<view class="important-info">
+  <view class="important">
+    <view class="box">
+      重要通知
+    </view>
+  </view>
+  <!-- 重要通知下方的轮播 -->
+  <swiper class="swiper" indicator-dots>
+    <!-- indicator-active-color="#4F4F57" -->
+    <swiper-item>
+      <view class='box' wx:for="{{ 3 }}" wx:key="index">
+        {{swiper[index]}}
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="box" wx:for="{{ 3 }}" wx:key="index">
+        {{swiper[index+3]}}
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 校园资讯 -->
+<!-- <view class="school-info">
+  <view class="top">
+    <view class="title">
+      校园资讯
+    </view> -->
+    <!-- 分割线 -->
+    <!-- <view class="seperate">
+      <view class="point"></view>
+      <view class="line"></view>
+      <view class="point"></view>
+    </view>
+  </view> -->
+  <!-- 活动列表: 公众号头像、公众号名称、文章标题 -->
+  <!-- <view class="info-box">
+    <navigator class="info" wx:for="{{ infoList }}" wx:key="index" url="/subPackages/pages/actishow/actishow">
+      <view class="top">
+        <view class="face">
+        </view>
+        <view class="name">
+        </view>
+      </view>
+
+      <view class="content">
+      </view>
+      <view class="topic">
+      </view>
+    </navigator>
+
+  </view>
+</view> -->
+
+<!-- 到达底部 -->
+<view class="empty">
+  触碰到我的底线了~
+</view>
+
+<!-- 回到顶部按钮 -->
+<view class="to-top" id="to-top" bindtap="backTop" wx:if="{{isTop}}">
+  <image src="/assets/public/to-top.png"></image>
+</view>

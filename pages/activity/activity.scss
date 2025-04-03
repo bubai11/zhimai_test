@@ -1,0 +1,161 @@
+/**index.wxss**/
+page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  
+    margin:0px;
+    padding:0px;
+  }
+  
+   //顶部按钮+搜索框
+   .top{
+    // height:100rpx;
+    height: 9vh;
+    display: flex;
+    // background-color:blue;
+  }
+  
+  // 顶部按钮
+  .top>.classify{
+    // float:left;
+    font-size:22rpx;
+    background-color: rgb(223, 223, 223);
+    border-radius: 30rpx;
+    padding:3vh 62rpx;
+    text-align: center;
+  } 
+  
+  // 搜索按钮
+  .search{
+    position: absolute;
+    right: 15rpx;
+    top: 2vh;
+  }
+  .search>image{
+    width:50rpx;
+    height:50rpx;
+    margin:0 10rpx;
+  }
+  
+  // 标题
+  .title{
+    margin: 2vh 40rpx;
+    font-size: 40rpx;
+    font-weight: bolder;
+    letter-spacing: 10rpx;
+  }
+  
+  .new-act{
+    height:25vh;
+  }
+  
+  // 轮播图
+  .le-img {
+    width: 100%;
+    display: block;
+    transform: scale(0.8);
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    // box-shadow: 0 0 6rpx rgba(50, 50, 50, 0.4);
+    // -webkit-filter: blur(2rpx);
+    // -moz-filter: blur(2rpx);
+    // -ms-filter: blur(2rpx);
+    // -o-filter: blur(2rpx);
+    // filter: blur(2rpx);
+  }
+  
+  .le-img.le-active {
+    transform: scale(1);
+    // box-shadow: none;
+    // -webkit-filter: blur(0);
+    // -moz-filter: blur(0);
+    // -ms-filter: blur(0);
+    // -o-filter: blur(0);
+    // filter: blur(0);
+  }
+  
+  .act-box{
+    display: flex;
+    justify-content: center;
+    // justify-content: space-around;
+  }
+  
+  .act-box scroll-view{
+    width:50%;
+    width: 250rpx;
+    margin: 0 50rpx;
+  }
+  
+  .scroll1{
+    float:left;
+  }
+  
+  .scroll2{
+    float:right;
+  }
+  
+  .act-box .box>.pic{
+    padding: 0;
+    // background-color: rgb(233,233,233);
+    // border-radius: 20rpx;
+    margin: 5vh 0 1vh 0;
+    width: 250rpx;
+    height: 15vh;
+    // text-align: center;
+  }
+  
+  .act-box .box>.pic>image{
+    width: 100%;
+    height: 100%;
+    border-radius: 20rpx;
+  }
+  
+  .act-box .box>.topic{
+    font-size: 30rpx;
+    width: 250rpx;
+    height: 7vh;
+  
+    // 超出显示省略号
+    text-overflow: ellipsis;
+    overflow: hidden;
+    // 保留两行标题
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    // display: -moz-box;
+    // -moz-line-clamp: 2;
+    // -moz-box-orient: vertical;
+    // word-wrap: break-word;
+    // word-break: break-all;
+    // white-space: normal;
+  }
+  
+  // 到达底部
+  .empty{
+    margin-top: 4vh;
+    font-size: 22rpx;
+    color:rgb(145, 145, 145);
+    text-align: center;
+  }
+  
+  // 返回顶部按钮
+  .to-top{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // position: fixed;
+    bottom: 10vh;
+    right: 0rpx;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 100%;
+    border:rgb(184, 184, 184) solid 3rpx;
+    background-color: white;
+  }
+  
+  .to-top>image{
+    height: 50%;
+    width: 50%;
+  }

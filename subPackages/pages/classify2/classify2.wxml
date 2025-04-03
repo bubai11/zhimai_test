@@ -1,0 +1,44 @@
+<!--pages/classify/classify.wxml-->
+
+<view class="top">
+  <view class="font1">
+    请选择你的意向项目
+  </view>
+  <view class="font2">
+    可选择一个或多个项目，可随时调整
+  </view>
+</view>
+
+<!-- "分类"选择 -->
+<view class="classify-box">
+  <view class="title">
+    分类
+  </view>
+  <view class="choose-box">
+    <view class="choice {{listIndex==index?'choose':'unchoose'}}" wx:for="{{ List }}" wx:key="index" data-index="{{index}}" bind:tap="changeList">
+      {{ item.title }}
+    </view>
+  </view>
+</view>
+
+<!-- "项目"选择 -->
+<view class="classify-box">
+  <view class="title">
+    项目
+  </view>
+  <view class="choose-box">
+    <view class="choice {{List[listIndex].choose[index] ? 'choose': 'unchoose'}}" wx:for="{{ List[listIndex].obj }}" wx:key="index" data-index="{{index}}" bind:tap="changeObj">
+      {{ item }}
+    </view>
+  </view>
+</view>
+
+<!-- 按钮 -->
+<view class="button-box">
+  <view class="reset" bind:tap="resetChoose">
+    重置
+  </view>
+  <view class="confirm">
+    确认
+  </view>
+</view>

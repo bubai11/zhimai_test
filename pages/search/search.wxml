@@ -1,0 +1,49 @@
+<!--pages/search/search.wxml-->
+<!-- 顶部搜索框+按钮 -->
+<view class="top">
+  <!-- 搜索框 -->
+  <view class="search-box">
+    <view class="icon search">
+      <image src="/assets/public/search2.png"></image>
+    </view>
+    <!-- 输入框 -->
+    <input class="content" id="search-content" type="text" maxlength="20" focus="true" confirm-type="search" model:value="{{title}}" placeholder="搜索内容" auto-focus="false">
+    </input>
+    <!-- bindinput="getInput" -->
+    <view class="icon clear">
+      <image src="/assets/public/search-cancel.png" bind:tap="Onclear"></image>
+    </view>
+  </view>
+  <view class="searchBtn" bind:tap="Onsearch">
+    搜索
+  </view>
+</view>
+
+<!-- 历史记录列表 -->
+<view class="history">
+  <view class="top">
+    <view class="title">
+      历史记录
+    </view>
+    <view class="font {{deleteHidden?'hidden':'show'}}" hover-class="font-hover" bind:tap="deleteAll">全部删除</view>
+    <!-- "删除"图标 -->
+    <image src="/assets/search/delete.png" bind:tap="onDeleteHistory" />
+  </view>
+  <view class="history-list">
+    <view class="item" wx:for="{{ historyList }}" wx:key="index" bind:tap="{{deleteHidden?'clickhistory':none}}" data-set="{{item}}">
+      <view class="font">{{ item }}</view>
+      <view class="icon {{deleteHidden?'hidden':'show'}}" bind:tap="deleteSingle" data-set="{{index}}">x</view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- <view class="delete-box"hidden="{{ deleteHidden }}">
+  <view class="delete" bind:tap="onDeleteHistory">
+    删除所有历史记录
+  </view>
+</view> -->
+
+<!-- <view class="board {{deleteHidden ? 'hidden':'show'}}" bind:tap="onDeleteShow">
+</view> -->

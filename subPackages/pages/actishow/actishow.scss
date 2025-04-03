@@ -1,0 +1,104 @@
+/* pages/actishow/actishow.wxss */
+
+// 三个点
+.point{
+  margin: 3vh 60rpx;
+  float: right;
+  color: black;
+  font-size: 30rpx;
+  font-weight: bolder;
+}
+
+// 活动标题
+.title{
+  float: left;
+  margin: 0 70rpx;
+  padding-top: 3vh;
+  font-weight: bold;
+  // background-color: aquamarine;
+}
+
+// 活动
+.acti{
+  float:right;
+  margin: 2vh 70rpx;
+}
+
+.acti>.pic{
+  height: 40vh;
+  width: 610rpx;
+}
+
+.acti>.pic>image{
+  border-radius: 30rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.acti>.topic{
+  margin: 2vh 0;
+  text-align: center;
+}
+
+// 按钮
+.button-box{
+  position: absolute;
+  bottom: 0;
+  display: fixed;
+  height: 30vh;
+  width: 100%;
+  background-color: rgb(233,233,233);
+  z-index:1;
+}
+
+.button{
+  float: left;
+  margin: 3vh 40rpx;
+  width: 200rpx;
+  height: 15vh;
+  background-color: white;
+  border-radius: 30rpx;
+}
+
+.button .icon{
+  line-height: 10vh;
+  text-align: center;
+  width: 100%;
+  height: 50%;
+}
+
+.button .icon>image{
+  width: 80rpx;
+  height: 7vh;
+}
+
+.button .font{
+  letter-spacing: 5rpx;
+  font-size: 30rpx;
+  margin: 0 50rpx;
+}
+
+.cancel{
+  line-height: 9vh;
+  text-align: center;
+  float: left;
+  width: 100%;
+  height: 9vh;
+  background-color: white;
+}
+
+// 背景
+.board{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(27, 24, 24, 0.705);
+}
+
+.show{
+  display: block;
+}
+
+.hidden{
+  display: none;
+}

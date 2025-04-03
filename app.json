@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/info/info",
+    "pages/activity/activity",
+    "pages/self/self",
+    "pages/classify/classify",
+    "pages/search/search",
+    "pages/classify2/classify2"
+  ],
+  "subPackages": [
+    {
+      "root": "subPackages",
+      "name": "subPackages",
+      "pages": [
+        "pages/classify2/classify2",
+        "pages/history/history",
+        "pages/collection/collection",
+        "pages/remind/remind",
+        "pages/remind-create/remind-create",
+        "pages/actishow/actishow",
+        "pages/individual-edit/individual-edit",
+        "pages/AccountAndSafe/AccountAndSafe"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTitleText": "知脉校园",
+    "navigationBarBackgroundColor": "#2785FF",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#efefef"
+  },
+  "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#2785FF",
+    "list": [
+      {
+        "text": "信息资讯",
+        "pagePath": "pages/info/info",
+        "iconPath": "/assets/info/info.png",
+        "selectedIconPath": "/assets/info/info-active.png"
+      },
+      {
+        "text": "二课综测",
+        "pagePath": "pages/activity/activity",
+        "iconPath": "/assets/activity/activity.png",
+        "selectedIconPath": "/assets/activity/activity-active.png"
+      },
+      {
+        "text": "个人中心",
+        "pagePath": "pages/self/self",
+        "iconPath": "/assets/self/self.png",
+        "selectedIconPath": "/assets/self/self-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,99 @@
+/* pages/classify2/classify2.wxss */
+// 整体外框
+.container{
+  display: flex;
+  flex-direction: row;
+  height: 93vh;
+}
+
+// 左菜单栏
+.left{
+  width: 25vw;
+  background-color: gainsboro;
+  scroll-view{
+    height: 93vh;
+  }
+
+  // 左菜单选项
+  .left-item{
+    color: gray;
+    height: 8vh;
+    text-align: center;
+    line-height: 8vh;
+
+    // 当前选中
+    &.active{
+      background-color: white;
+      color: black;
+      font-weight: bold;
+    }
+  }
+}
+
+// 右菜单栏
+.right{
+  width: 75vw;
+  scroll-view{
+    height: 93vh;
+  }
+  // 右菜单选项
+  .right-item{
+    padding: 3vh 20rpx 0;
+
+    // 分类标题
+    .title{
+      font-weight: bold;
+    }
+
+    // 分类内容
+    .option-box{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      // 分类选项
+      .option{
+        padding: 10rpx 15rpx;
+        margin: 10rpx;
+        width: 120rpx;
+        border-radius: 15rpx;
+        // 文字上下水平居中
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30rpx;
+        min-height: 50rpx;
+        
+        // 未被选中
+        &.unchoose{
+          background-color: rgb(233,233,233);
+        }
+
+        // 被选中
+        &.choose{
+          background-color: rgb(107, 208, 255);
+        }
+      }
+    }
+  }
+}
+
+// “重置”和“确认”按钮
+.button-box{
+  position: fixed;
+  bottom: 0vh;
+  width: 100vw;
+  view{
+    text-align: center;
+    font-size: 30rpx;
+    background-color: rgb(206, 206, 206);
+    width: 50%;
+    padding: 2vh 0;
+  }
+  .reset{
+    float: left;
+  }
+  .confirm{
+    float: right;
+    background-color: rgb(252, 224, 70);
+  }
+}

@@ -1,0 +1,81 @@
+/* pages/remind-create/remind-create.wxss */
+.top{
+  display: flex;
+  margin-top: 2vh;
+  height: 9vh;
+}
+
+.top>view{
+  margin: auto;
+}
+
+.top>.title{
+  font-size: 45rpx;
+}
+
+.top>.button{
+  font-size: 36rpx;
+}
+
+.remind-box{
+  margin: 2vh 50rpx 0 50rpx;
+  margin-top: 2vh;
+  height: 30vh;
+}
+
+.remind-box>.title{
+  height: 4.5vh;
+  line-height: 4.5vh;
+  font-size: 3vh;
+  padding: 1vh 40rpx;
+  border-radius: 30rpx;
+  background-color: rgb(233, 233, 233);
+  margin-bottom: 4vh;
+}
+
+.remind-box>.font{
+  float: left;
+  letter-spacing: 5rpx;
+  //remind-box的height - title的height - title的margin-bottom
+  height: 19vh;
+}
+
+.remind{
+  float: left;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+
+.begin,.end{
+  background-color: rgb(233, 233, 233);
+  border-radius: 30rpx;
+  width: 400rpx;
+  height: 4.5vh;
+  line-height: 4.5vh;
+  font-size: 35rpx;
+  padding: 1vh 30rpx;
+  display: flex;
+}
+
+.time{
+  margin-left: 50rpx;
+}
+
+.remind>.font{
+  text-align: center;
+  margin: 2vh;
+}
+
+.delete{
+  position: fixed;
+  bottom: 0;
+  height: 7vh;
+  background-color: rgb(243, 76, 76);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3vh;
+}

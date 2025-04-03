@@ -1,0 +1,127 @@
+<!--pages/remind/remind.wxml-->
+
+<!-- 导入wxs -->
+<wxs module="compareYear" src="remind.wxs"></wxs>
+<wxs module="compareTime" src="remind.wxs"></wxs>
+<!-- 最外围,隔开界面 -->
+<view class="outside">
+  <!-- 顶部日期 -->
+  <view class="top">
+
+    <view class="show">
+      {{curyear}}年{{curmonth+1}}月
+    </view>
+
+    <!-- 点击修改日历展示日期 -->
+    <picker mode="date" class="date" value="{{curyear+'-'+(curmonth+1)}}" fields="month" bindchange="changeCalendar">
+      <view class="choose-date">
+        选择日期
+      </view>
+    </picker>
+
+    <navigator url="/subPackages/pages/remind-create/remind-create?title=" class='create'>
+      新建
+    </navigator>
+  </view>
+
+  <!-- 中间日历 -->
+  <view class="calendar-box">
+    <span class="arrow" bind:tap="changeCalendarLeft" style="padding-left:55rpx">{{'<'}}</span>
+
+    <!-- 日历 -->
+    <view class="calendar">
+      <view class="top-box">
+        <!-- 星期标题 -->
+        <view class="title" wx:for="{{weeks}}" wx:key="index">
+          <view class="font">
+            {{item}}
+          </view>
+        </view>
+      </view>
+      <!-- 具体日历数字 -->
+      <view class="num">
+        <view class="day" wx:for="{{dayList}}" wx:key="index" bind:tap="changeCurDay" data-set="{{index}}">
+          <view class="font {{index==(curday+emptyDay-1) ? 'curday': ''}} {{index%7==0 ? 'pink':''}}">
+            <!-- 若是今天，则不显示文字 -->
+            {{curyear == thisyear && curmonth == thismonth && dayList[index]==today ? '' : item}}
+          </view>
+
+          <!-- 若是今天，则显示星星 -->
+          <image src="{{curImg[curImgIndex]}}" class="{{curyear == thisyear && curmonth == thismonth && dayList[index]==today? 'show':'hidden'}}" />
+
+          <!-- 当天有活动，下方显示圆点 -->
+          <view class="point {{pointList[index-emptyDay] ? 'show':'hidden'}}"></view>
+        </view>
+      </view>
+    </view>
+    <span class="arrow" bind:tap="changeCalendarRight" style="padding-right:55rpx">></span>
+  </view>
+
+  <!-- 活动栏 -->
+  <view class="act" wx:for="{{showList}}" wx:key="index">
+    <!-- 开始日期+图标 -->
+    <view class="topic">
+      <image src="{{timeImg}}" mode="" class="timeImg" />
+      <view class="date">
+        <view>
+          {{compareYear.compareDate1(item.beginDate,item.endDate)}}
+        </view>
+        <view>
+          to
+        </view>
+        <view>
+          {{compareYear.compareDate2(item.beginDate,item.endDate)}}
+        </view>
+      </view>
+    </view>
+    <!-- 分割线 -->
+    <view class="line">
+    </view>
+    <!-- 提醒标题+开始时间 -->
+    <view class="middle">
+      <view class="circle {{item.finish ? 'finish':''}}" bind:tap="actFinish" data-set="{{index}}">
+        {{item.finish ? '√':''}}
+      </view>
+      <navigator url="{{'/subPackages/pages/remind-create/remind-create?title='+item.title+'&beginDate='+item.beginDate+'&beginTime='+item.beginTime+'&endDate='+item.endDate+'&endTime='+item.endTime+'&id='+item.id}}">
+        <!-- 发送活动的开始时间和结束时间 -->
+        <view class="font {{item.finish ? 'line-font':''}}">
+          {{item.title}}
+        </view>
+        <view class="time">
+          <view>
+            {{compareTime.compareTime1(item.beginDate+' '+item.beginTime,curyear+'-'+(curmonth+1)+'-'+curday+' 00:00',true)}}
+          </view>
+          <view>
+            {{compareTime.compareTime1(item.endDate+' '+item.endTime,curyear+'-'+(curmonth+1)+'-'+curday+' 23:59',false)}}
+          </view>
+
+        </view>
+        <!-- 点击链接,将日期和时间一起转发 -->
+        <view class="icon">
+          <image src="{{rewriteImg}}" mode="aspectFit" />
+        </view>
+      </navigator>
+    </view>
+
+    <navigator  url="/subPackages/pages/actishow/actishow">
+      <view class="link {{item.urlTitle ? 'show':'disappear'}}">
+        <view class="left">
+          链接
+        </view>
+        <view class="right">
+          {{item.urlTitle}}
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<!-- 到达底部 -->
+<view class="empty">
+  触碰到我的底线了~
+</view>
+
+<!-- 回到顶部按钮 -->
+<view class="to-top" id="to-top" bindtap="backTop" wx:if="{{isTop}}">
+  <image src="/assets/public/to-top.png"></image>
+</view>

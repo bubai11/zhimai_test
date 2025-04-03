@@ -1,0 +1,23 @@
+<!--pages/classify/classify.wxml-->
+<view class="classify" wx:for="{{obj}}" wx:key="outindex" wx:for-item="classify" wx:for-index="outindex">
+  <view class="title {{classify.isChild?'child':''}}">
+    {{classify.title}}
+  </view>
+  <view class="choose-box">
+    <view class="choice {{obj[outindex].choose[inindex]?'choose':'unchoose'}}" wx:for="{{classify.list}}" wx:key="inindex" wx:for-item="choice" wx:for-index="inindex" data-set="{{[outindex,inindex]}}" bind:tap="onChangeChoice">
+      {{choice}}
+    </view>
+  </view>
+</view>
+
+<view class="empty"></view>
+
+<!-- 按钮 -->
+<view class="button-box">
+  <view class="reset" bind:tap="resetChoose">
+    重置
+  </view>
+  <view class="confirm">
+    确认
+  </view>
+</view>

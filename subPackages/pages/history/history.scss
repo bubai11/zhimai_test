@@ -1,0 +1,183 @@
+/* pages/history/history.wxss */
+
+// 顶部
+.top{
+  display: flex;
+  height: 10vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+// 搜索框
+.search-box{
+  display: flex;
+  height:4vh;
+  width: 380rpx;
+  border:rgb(145, 145, 145) solid 2rpx;
+  border-radius: 10rpx;
+  // margin-top:2.5vh;
+  align-items: center;
+} 
+
+.search-box>.icon>image{
+  width:30rpx;
+  height:30rpx;
+  margin:0 10rpx;
+}
+
+.search-box>.content{
+  width:290rpx;
+  min-height: 0rpx;
+  height:3.5vh;
+}
+
+// 分类+管理 按钮
+.button{
+  height: 4vh;
+  display: inline-block;
+  font-size: 25rpx;
+  line-height: 4vh;
+  padding: 1.5vh 30rpx;
+  border-radius: 30rpx;
+  background-color: rgb(223, 223, 223);
+}
+
+// 活动按钮
+.button-box{
+  display: flex;
+  justify-content: space-around;
+  margin: 0 50rpx;
+}
+
+// 下划线
+.line-show{
+  border-bottom: black solid 4rpx;
+}
+
+.line-hidden{
+  border-bottom: none;
+}
+
+.button-box>view{
+  padding: 1vh 20rpx;
+}
+
+// 活动
+.acti-box{
+  margin: 4vh 0;
+}
+
+// 具体活动
+.acti-box>.acti{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// 历史时间
+.acti>.time{
+  margin-left: 80rpx;
+  width: 100%;
+}
+
+// 活动管理-圆点
+.point{
+  width: 45rpx;
+  height: 45rpx;
+  margin:auto;
+}
+
+.hidden{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+.acti-box .act{
+  display: flex;
+  height: 25vh;
+  width: 610rpx;
+  background-color: rgb(223, 223, 223);
+  border-radius: 30rpx;
+  margin: 3vh auto;
+}
+
+// 活动标题+分类
+.act>.left{
+  height: 100%;
+  width: 60%;
+}
+
+// 活动图片
+.act>.right{
+  height: 100%;
+  width: 40%;
+}
+
+.act>.right>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 0 30rpx 30rpx 0;
+}
+
+.act>.left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// 活动左侧
+.act>.left>view{
+  display: flex;
+  align-items: center;
+}
+
+// 活动标题
+.act>.left>.topic{
+  height: 55%;
+}
+
+// 活动分类
+.act>.left>.classify{
+  height: 45%;
+}
+
+// 到达底部
+.empty{
+  font-size: 22rpx;
+  color:rgb(145, 145, 145);
+  text-align: center;
+}
+
+// 返回顶部按钮
+.to-top{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 10vh;
+  right: 0rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  border:rgb(184, 184, 184) solid 3rpx;
+  background-color: white;
+}
+
+.to-top>image{
+  height: 50%;
+  width: 50%;
+}
+
+// 删除
+.delete{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 8vh;
+  line-height: 8vh;
+  background-color: rgb(233, 233, 233);
+  color: red;
+  text-align: center;
+}

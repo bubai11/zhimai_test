@@ -1,0 +1,136 @@
+/* pages/search/search.wxss */
+// 顶部
+.top{
+    display: flex;
+    margin-top:2.5vh;
+    margin-left: 20rpx;
+  }
+  
+  // 搜索框
+  .search-box{
+    display: flex;
+    height:4.5vh;
+    width:550rpx;
+    border:rgb(145, 145, 145) solid 2rpx;
+    border-radius: 50rpx;
+    margin: auto;
+    align-items: center;
+  } 
+  
+  // 图标
+  .search-box>.icon>image{
+    width:30rpx;
+    height:30rpx;
+    margin:0 10rpx;
+  }
+  
+  // 搜索内容框
+  .search-box>.content{
+    width:460rpx;
+    // width: search-box的width - 90
+    min-height: 0rpx;
+    height:3.5vh;
+    font-size: 30rpx;
+  }
+  
+  // "搜索"按钮
+  .searchBtn{
+    height: 4vh;
+    line-height: 4vh;
+    text-align: center;
+    margin-right: 20rpx;
+    font-weight: bold;
+    font-size: 30rpx;
+    margin: auto;
+  }
+  
+  // 历史记录
+  .history{
+    margin:4vh 50rpx 0 50rpx;
+  }
+  
+  .history>.top>.title{
+    font-weight: bold;
+    font-size: 35rpx;
+  }
+  
+  .history>.top>.font{
+    position: absolute;
+    right: 120rpx;
+    font-size: 35rpx;
+    color:rgb(145, 145, 145);
+  }
+  
+  .font-hover{
+    color: black;
+  }
+  
+  .history>.top>image{
+    position: absolute;
+    right: 50rpx;
+    width: 50rpx;
+    height: 50rpx;
+  }
+  
+  .history-list{
+    display: flex;
+    margin-top: 1.5vh;
+    flex-wrap: wrap;
+  }
+  
+  .history-list>.item{
+    display: flex;
+    background-color: rgb(233, 233, 233);
+    width: 180rpx;
+    height: 6vh;
+    // align-content: space-between;
+    // height: 6vh;
+    margin: 1vh 15rpx;
+    justify-content: center;
+    // text-align: center;
+    line-height: 6vh;
+    font-size: 30rpx;
+    border-radius: 40rpx;
+  }
+  
+  .item>.icon{
+    position: relative;
+    left: 20rpx;
+  }
+  
+  // “确定删除”
+  // .delete-box{
+  //   position: absolute;
+  //   bottom: 0;
+  //   display: fixed;
+  //   height: 8vh;
+  //   width: 100%;
+  //   background-color: rgb(233,233,233);
+  //   z-index: 1;
+  // }
+  
+  // .delete{
+  //   text-align: center;
+  //   height: 8vh;
+  //   line-height: 8vh;
+  //   color: red;
+  //   background-color: rgb(241, 241, 241);
+  // }
+  
+  // // “删除”背景
+  // .board{
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100vh;
+  //   background-color: rgba(27, 24, 24, 0.705);
+  // }
+  
+  .show{
+    display: block;
+  }
+  
+  .hidden{
+    display: none;
+  }

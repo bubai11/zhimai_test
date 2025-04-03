@@ -1,0 +1,113 @@
+<!--index.wxml-->
+
+<!-- 顶部搜索 -->
+<view class="top">
+  <navigator class="classify" url="/pages/classify2/classify2">
+    分类
+  </navigator>
+  <navigator class="search" url="/pages/search/search">
+    <image src="/assets/public/search.png" />
+  </navigator>
+</view>
+
+<view class="title">
+  二课/综测活动
+</view>
+
+<!-- 活动类型筛选 -->
+<view class="filter-section">
+  <view class="filter-group">
+    <view class="filter-item {{filters.activity_type === '' ? 'active' : ''}}" 
+          bindtap="filterActivities" 
+          data-type="activity_type" 
+          data-value="">全部</view>
+    <view class="filter-item {{filters.activity_type === '二课' ? 'active' : ''}}" 
+          bindtap="filterActivities" 
+          data-type="activity_type" 
+          data-value="二课">二课</view>
+    <view class="filter-item {{filters.activity_type === '综测' ? 'active' : ''}}" 
+          bindtap="filterActivities" 
+          data-type="activity_type" 
+          data-value="综测">综测</view>
+  </view>
+</view>
+
+<!-- 最新活动-顶部滚动 -->
+<view class="new-act" wx:if="{{actList.length > 0}}">
+  <swiper class="new-act" previous-margin='190rpx' next-margin='190rpx' bindchange="swiperChange" style='height:{{swiperHeight}}' circular>
+    <swiper-item wx:for='{{actList}}' wx:key='activity_id' wx:if="{{index < 5}}">
+      <navigator url="/subPackages/pages/actishow/actishow?id={{item.activity_id}}">
+        <image class='le-img {{nowIndex==index?"le-active":""}}' bindload='getHeight' src='{{item.pic}}' mode="aspectFill" style='height:{{swiperHeight}};'></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 所有活动,分奇偶两列 -->
+<view class="act-box">
+  <scroll-view class="scroll1">
+    <navigator class="box" 
+              wx:for="{{ actList }}" 
+              wx:key="activity_id" 
+              wx:if="{{ index%2 == 0}}" 
+              url="/subPackages/pages/actishow/actishow?id={{item.activity_id}}">
+      <view class="pic">
+        <image src="{{item.pic}}" mode="aspectFill" />
+        <view class="status-tag {{item.status === '进行中' ? 'ongoing' : 'ended'}}">
+          {{item.status}}
+        </view>
+      </view>
+      <view class="info-box">
+        <view class="topic">{{item.title}}</view>
+        <view class="details">
+          <view class="time">{{item.start_time}}</view>
+          <view class="location">{{item.location}}</view>
+          <view class="type-tag">{{item.credit_type}}</view>
+        </view>
+      </view>
+    </navigator>
+  </scroll-view>
+
+  <scroll-view class="scroll2">
+    <navigator class="box" 
+              wx:for="{{ actList }}" 
+              wx:key="activity_id" 
+              wx:if="{{ index%2 == 1}}" 
+              url="/subPackages/pages/actishow/actishow?id={{item.activity_id}}">
+      <view class="pic">
+        <image src="{{item.pic}}" mode="aspectFill" />
+        <view class="status-tag {{item.status === '进行中' ? 'ongoing' : 'ended'}}">
+          {{item.status}}
+        </view>
+      </view>
+      <view class="info-box">
+        <view class="topic">{{item.title}}</view>
+        <view class="details">
+          <view class="time">{{item.start_time}}</view>
+          <view class="location">{{item.location}}</view>
+          <view class="type-tag">{{item.credit_type}}</view>
+        </view>
+      </view>
+    </navigator>
+  </scroll-view>
+</view>
+
+<!-- 加载中提示 -->
+<view class="loading" wx:if="{{loading}}">
+  <image class="loading-icon" src="/assets/public/loading.gif"></image>
+</view>
+
+<!-- 空状态提示 -->
+<view class="empty" wx:if="{{!loading && actList.length === 0}}">
+  暂无活动数据~
+</view>
+
+<!-- 到达底部 -->
+<view class="empty" wx:if="{{!loading && actList.length > 0}}">
+  触碰到我的底线了~
+</view>
+
+<!-- 回到顶部按钮 -->
+<view class="to-top" id="to-top" bindtap="backTop" wx:if="{{isTop}}">
+  <image src="/assets/public/to-top.png"></image>
+</view>

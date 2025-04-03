@@ -1,0 +1,32 @@
+<!--pages/AccountAndSafe/AccountAndSafe.wxml-->
+<view class="container">
+  <view class="section">
+    <view class="section-title">账号信息</view>
+    <view class="info-list">
+      <view class="info-item">
+        <text class="label">账号状态</text>
+        <text class="value {{isLoggedIn ? 'active' : 'inactive'}}">{{isLoggedIn ? '已登录' : '未登录'}}</text>
+      </view>
+      <view class="info-item" wx:if="{{isLoggedIn}}">
+        <text class="label">用户昵称</text>
+        <text class="value">{{userInfo.nickname}}</text>
+      </view>
+      <view class="info-item" wx:if="{{isLoggedIn}}">
+        <text class="label">账号状态</text>
+        <text class="value">{{userInfo.status === 'active' ? '已激活' : '待激活'}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">账号安全</view>
+    <view class="button-list">
+      <button class="btn logout-btn" bindtap="handleLogout" wx:if="{{isLoggedIn}}">退出登录</button>
+      <button class="btn delete-btn" bindtap="handleDeleteAccount" wx:if="{{isLoggedIn}}">注销账号</button>
+    </view>
+  </view>
+
+  <view class="tips" wx:if="{{!isLoggedIn}}">
+    <text>您当前未登录，请先登录后再进行操作</text>
+  </view>
+</view>

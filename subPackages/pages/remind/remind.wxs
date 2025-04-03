@@ -1,0 +1,59 @@
+// 判断是否同年
+var compareYear = {
+  // 返回开始日期
+  compareDate1: function (n1, n2) {
+    var date1 = getDate(n1);
+    var date2 = getDate(n2);
+    if (date1.getFullYear() == date2.getFullYear())
+      return format(date1.getMonth() + 1) + '-' + format(date1.getDate());
+    return date1;
+  },
+  // 返回结束日期
+  compareDate2: function (n1, n2) {
+    var date1 = getDate(n1);
+    var date2 = getDate(n2);
+    if (date1.getFullYear() == date2.getFullYear())
+      return format(date2.getMonth() + 1) + '-' + format(date2.getDate());
+    return date2;
+  }
+}
+
+var compareTime = {
+  compareTime1: function (date1, date2, judge) {
+    /* judge = true时
+     date1:活动的开始时间   date2:当天的00:00
+    */
+    var date1 = getDate(date1);
+    var date2 = getDate(date2);
+
+    var hour, minute;
+    /* 
+    judge = true时，
+    开始时间早于今天00:00,则设置00:00为开始时间
+    judge = false时，
+    结束时间大于今天23：59,则设置23:59为结束时间
+    */
+    if (date1 < date2 == judge) {
+      hour = date2.getHours();
+      minute = date2.getMinutes();
+    }
+    else {
+      hour = date1.getHours();
+      minute = date1.getMinutes();
+    }
+
+    // 格式化时间
+    return format(hour) + ':' + format(minute);
+  }
+}
+
+var format = function (num) {
+  if (num < 10) return '0' + num;
+  return num;
+}
+
+module.exports = {
+  compareDate1: compareYear.compareDate1,
+  compareDate2: compareYear.compareDate2,
+  compareTime1: compareTime.compareTime1
+}

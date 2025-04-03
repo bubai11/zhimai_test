@@ -1,0 +1,80 @@
+/* pages/classify/classify.wxss */
+
+// 分类
+.classify{
+  margin: 3vh 30rpx;
+}
+
+// 分类标题
+.title{
+  font-size: 40rpx;
+  padding: 1vh 30rpx;
+  font-weight: bolder;
+  letter-spacing: 10rpx;
+}
+
+// 分类选项（总）
+.choose-box{
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+}
+
+// 分类选项（单个）
+.choose-box>.choice{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+  width: 165rpx;
+  border-radius: 25rpx;
+  margin: 1vh 20rpx;
+  font-size: 32rpx;
+  padding: 1vh 15rpx;
+}
+
+// 未被选中
+.unchoose{
+  background-color: rgb(233,233,233);
+}
+
+// 被选中
+.choose{
+  background-color: rgb(107, 208, 255);
+}
+
+// 子分类的标题
+.child{
+  font-size: 35rpx;
+  color: rgb(124,124,124);
+}
+
+// “重置”和“确认”按钮
+.button-box{
+  position: fixed;
+  bottom: 0vh;
+  width: 100%;
+}
+
+.button-box>view{
+  text-align: center;
+  font-size: 30rpx;
+  background-color: rgb(233,233,233);
+  width: 50%;
+  padding: 2vh 0;
+}
+
+.button-box>.reset{
+  float: left;
+}
+
+.button-box>.confirm{
+  float: right;
+  background-color: rgb(252, 224, 70);
+}
+
+// 防止选项被按钮遮挡无法下滑
+.empty{
+  width: 100%;
+  height: 7vh;
+}

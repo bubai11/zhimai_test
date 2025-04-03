@@ -1,0 +1,228 @@
+/* pages/self/self.wxss */
+
+// 顶部个人信息
+.top {
+  display: flex;
+  padding: 1.2vh 20rpx;
+  box-sizing: border-box;
+  height: 14vh;
+}
+
+// 头像
+.top>.face {
+  padding: 0;
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+  border: 1px solid rgb(223, 223, 223);
+  // background-color:rgb(223, 223, 223);
+}
+
+.top>.face>image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.top>.font {
+  // box-sizing: border-box;
+  width: 400rpx;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+}
+
+// 名字
+.top>.font>.name {
+  font-size: 40rpx;
+}
+
+// 校区
+.top>.font>.school-zone {
+  font-size: 27rpx;
+  margin-top: 1vh;
+  // margin-left:40rpx;
+}
+
+// “编辑资料”按钮
+.top .button {
+  font-size: 27rpx;
+  background-color: rgb(223, 223, 223);
+  border-radius: 30rpx;
+  padding: 2vh 25rpx;
+  height: 3.5vh;
+  margin-top: 2vh;
+}
+
+// 通知
+.notice-box {
+  height: 13.5vh;
+  box-sizing: border-box;
+  padding: 0.6vh 0;
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 530rpx;
+  height: 12.3vh;
+  background-color: rgb(223, 223, 223);
+  border-radius: 30rpx;
+}
+
+.notice>.pic {
+  width: 110rpx;
+  height: 100%;
+  float: left;
+}
+
+.notice>.pic>image {
+  width: 80rpx;
+  height: 85rpx;
+  margin: 1.3vh 14rpx;
+  margin-left: 20rpx;
+}
+
+.notice>.content {
+  font-size: 25rpx;
+  width: 380rpx;
+  padding: 0vh 10rpx;
+  text-align: center;
+  color: rgb(248, 99, 0);
+  text-align: center;
+}
+
+// 服务中心
+.serve-center {
+  box-sizing: border-box;
+  height: 25.5vh;
+  padding: 1vh 20rpx;
+}
+
+.serve-center>.title {
+  font-size: 35rpx;
+  margin-bottom: 1.2vh;
+}
+
+// 服务中心-按钮
+.serve-center>.button-box {
+  width: 710rpx;
+  height: 17.5vh;
+  background-color: rgb(223, 223, 223);
+  border-radius: 40rpx;
+}
+
+.serve-center>.button-box>.box {
+  float: left;
+  height: 13.5vh;
+  width: 120rpx;
+  margin: 1.8vh 20rpx;
+  text-align: center;
+  font-size: 25rpx;
+  font-weight: 550;
+  letter-spacing: 3rpx;
+}
+
+.serve-center .box>.icon>image {
+  width: 75rpx;
+  height: 75rpx;
+}
+
+// 广告
+.advertise {
+  height: 12vh;
+  background-color: rgb(223, 223, 223);
+  text-align: center;
+  border-radius: 30rpx;
+  line-height: 12vh;
+}
+
+// 更多服务
+.more-serve {
+  box-sizing: border-box;
+  height: 35vh;
+  padding: 1vh 20rpx;
+}
+
+.more-serve>.title {
+  font-size: 35rpx;
+}
+
+.more-serve>.button-box {
+  width: 670rpx;
+  height: 27vh;
+  margin-top: 1.5vh;
+  padding: 0rpx 20rpx;
+  background-color: rgb(223, 223, 223);
+  border-radius: 40rpx;
+  line-height: 5.5vh;
+}
+
+.more-serve>.button-box>.box {
+  padding: 0.9vh 10rpx;
+  height: 4.85vh;
+  font-size: 30rpx;
+  letter-spacing: 3rpx;
+  font-weight: bolder;
+}
+
+.more-serve .box>.icon {
+  float: left;
+  margin-right: 15rpx;
+}
+
+.more-serve .box>.icon>image {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.more-serve .box>.font {
+  width: 500rpx;
+  float: left;
+}
+
+.more-serve .box>.point {
+  float: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.board{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(45, 45, 45,0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.loginbox{
+  position: absolute;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 13vh;
+  border-top:1px solid rgb(223, 223, 223);
+  background-color: white;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.loginbox>.button{
+  text-align: center;
+  margin: 2.5vh auto;
+  width: 70%;
+  height: 8vh;
+  line-height: 8vh;
+  background-color: #00B26A;
+  border-radius: 30rpx;
+  color: white;
+}

@@ -1,0 +1,176 @@
+<!--pages/self/self.wxml-->
+
+<!-- 顶部个人信息 -->
+<view class="top">
+  <!-- 头像 -->
+  <!-- <button class="face" open-type="chooseAvatar" bind:tap="tapFace">
+    <image src="/assets/self/basic-face.png"></image>
+  </button> -->
+  <view class="face" bind:tap="tapFace">
+    <image src="{{userInfo.avatarUrl}}"></image>
+  </view>
+  <view class="font">
+    <view class="login {{isLoggedIn?'hidden':'show'}}" bind:tap="showLogin">
+      点击登录
+    </view>
+    <view class="name {{!isLoggedIn?'hidden':'show'}}">
+      {{userInfo.nickname}}
+    </view>
+    <view class="school-zone {{!isLoggedIn?'hidden':'show'}}">
+      {{userInfo.campus}} {{userInfo.grade}} {{userInfo.major}}
+    </view>
+  </view>
+  <view>
+    <view class="button" bind:tap="beforeNavigator" data-set="/subPackages/pages/individual-edit/individual-edit">
+      编辑资料
+    </view>
+  </view>
+</view>
+
+<!-- 活动通知 -->
+<view class="notice-box">
+  <view class="notice" bind:tap="OnRemind">
+    <view class="pic">
+      <image src="/assets/self/notice.png"></image>
+    </view>
+    <view class="content">
+      {{content}}
+    </view>
+  </view>
+</view>
+
+<!-- 服务中心 -->
+<view class="serve-center">
+  <view class="title">
+    服务中心
+  </view>
+  <view class="button-box">
+    <view class="box" bind:tap="beforeNavigator" data-set="/subPackages/pages/history/history">
+      <view class="icon">
+        <image src="/assets/self/history.png"></image>
+      </view>
+      浏览历史
+    </view>
+
+    <view class="box" bind:tap="beforeNavigator" data-set="/subPackages/pages/collection/collection">
+      <view class="icon">
+        <image src="/assets/self/collection.png"></image>
+      </view>
+      我的收藏
+    </view>
+
+    <view class="box" bind:tap="beforeNavigator"  data-set="/subPackages/pages/remind/remind">
+      <view class="icon">
+        <image src="/assets/self/remind.png"></image>
+      </view>
+      定时提醒
+    </view>
+  </view>
+</view>
+
+<!-- 广告 -->
+<!-- <navigator class="advertise" url="">
+  广告位
+</navigator> -->
+
+<!-- 更多服务 -->
+<view class="more-serve">
+  <view class="title">
+    更多服务
+  </view>
+  <view class="button-box">
+    <!-- <view class="box" wx:for="{{ more_service }}" wx:key="index">
+      <view class="icon">
+        <image src="{{'/assets/self/'+item.pic}}"></image>
+      </view>
+      <view class="font">
+        {{item.title}}
+      </view>
+      <view class="point">
+        >
+      </view>
+    </view> -->
+    <view class="box">
+      <view class="icon">
+        <image src="/assets/self/about-us.png"></image>
+      </view>
+      <view class="font">
+        关于我们
+      </view>
+      <view class="point">
+        >
+      </view>
+    </view>
+    <view class="box">
+      <view class="icon">
+        <image src="/assets/self/help-center.png"></image>
+      </view>
+      <view class="font">
+        帮助中心
+      </view>
+      <view class="point">
+        >
+      </view>
+    </view>
+    <view class="box">
+      <view class="icon">
+        <image src="/assets/self/business.png"></image>
+      </view>
+      <view class="font">
+        商务合作
+      </view>
+      <view class="point">
+        >
+      </view>
+    </view>
+    <navigator class="box" url="/subPackages/pages/AccountAndSafe/AccountAndSafe">
+      <view class="icon">
+        <image src="/assets/self/exit.png"></image>
+      </view>
+      <view class="font">
+        账号与安全
+      </view>
+      <view class="point">
+        >
+      </view>
+    </navigator>
+  </view>
+</view>
+
+<!-- 登录弹窗背景遮罩 -->
+<view class="board {{showLogin ? 'show':'hidden'}}" bind:tap="cancelLogin">
+</view>
+
+<!-- 登录弹窗 -->
+<view class="loginbox {{showLogin ? 'show':'hidden'}}">
+  <view class="login-header">
+    <view class="login-title">欢迎登录</view>
+    <view class="login-subtitle">请选择头像并设置昵称</view>
+  </view>
+  
+  <view class="login-content">
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="avatar" src="{{tempUserInfo.avatarUrl}}"></image>
+      <view class="avatar-tip">
+        <text class="iconfont icon-camera"></text>
+        <text>点击更换头像</text>
+      </view>
+    </button>
+
+    <view class="input-wrapper">
+      <text class="label">设置昵称</text>
+      <input 
+        type="nickname" 
+        class="nickname-input" 
+        placeholder="请输入昵称" 
+        placeholder-class="input-placeholder"
+        bind:change="onInputNickname" 
+      />
+    </view>
+
+    <view class="btn-group">
+      <view class="cancel-btn" hover-class="btn-hover" bind:tap="cancelLogin">取消</view>
+      <view class="confirm-btn" hover-class="btn-hover" bind:tap="Login">确认登录</view>
+    </view>
+  </view>
+</view>

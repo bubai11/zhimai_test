@@ -1,0 +1,39 @@
+<!--pages/classify2/classify2.wxml-->
+<view class="container">
+  <!-- 左侧菜单栏 -->
+  <view class="left">
+    <scroll-view scroll-y>
+      <!-- 左侧菜单项 -->
+      <view class="left-item {{leftIndex == index ? 'active':''}}" wx:for="{{menu}}" wx:key="index" bind:tap="onClickLeft" data-current_index="{{index}}">
+         {{ item.title }}
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 右侧菜单栏 -->
+  <view class="right">
+    <scroll-view scroll-y scroll-into-view="{{ 'right-' + rightIndex }}" bindscroll="onScrollRight" scroll-with-animation="true">
+      <view class="right-item" wx:for-items="{{ menu }}" wx:key="index" wx:for-item="menu_item" id="{{ 'right-' + outIndex }}" wx:for-index="outIndex">
+        <!-- 菜单标题 -->
+        <view class="title">
+          {{ menu_item.title }}
+        </view>
+        <!-- 菜单选项 -->
+        <view class="option-box">
+          <view class="option {{ menu_item.choose[inIndex]?'choose':'unchoose' }}" wx:for-items="{{ menu_item.list }}" wx:key="index" wx:for-item="option" wx:for-index="inIndex" data-option_index="{{ [outIndex,inIndex] }}" bind:tap="onClickOption">
+            {{ option }}
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 按钮 -->
+<view class="button-box">
+  <view class="reset" bind:tap="resetOptions">
+    重置
+  </view>
+  <view class="confirm">
+    确认
+  </view>
+</view>

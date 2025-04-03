@@ -1,0 +1,289 @@
+/* pages/remind/remind.wxss */
+
+// 最外层边框
+.outside{
+  // padding: 0 55rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// 顶部月份和“新建”按钮
+.top{
+  padding: 0 55rpx;
+  display: flex;
+  margin-top: 3vh;
+  height: 8vh;
+  width: 100%;
+  align-items: center;
+}
+
+// 显示年月
+.top .show{
+  font-size: 60rpx;
+  font-weight: 800;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.top .choose-date{
+  width: 130rpx;
+  margin-top: 1vh;
+  font-size: 30rpx;
+  color: rgb(100,100,100);
+}
+
+// “新建”按钮
+.create{
+  position: absolute;
+  right: 90rpx;
+  font-size: 35rpx;
+}
+
+.calendar-box{
+  display: flex;
+  align-items: center;
+  margin-top: 3vh;
+  .arrow{
+    color:rgb(130, 130, 130);
+    font-weight: bold;
+    height: 40vh;
+    line-height: 40vh;
+  }
+}
+
+// 日历
+.calendar{
+  // padding: 0 30rpx 0 50rpx;
+  width: 600rpx;
+  height: 40vh;
+  // margin-top: 3vh;
+}
+
+// 日历星期标题
+.calendar>.top-box{
+  display: flex;
+  height: 5vh;
+  text-align: center;
+}
+
+.calendar .title{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  flex: 0 0 14%;
+}
+
+// 日历数字
+.calendar>.num{
+  display: flex;
+  align-content: space-between; // 自动填充高度
+  height: 35vh;
+  flex-wrap: wrap;
+}
+
+// 日历数字间距
+.calendar>.num>.day{
+  flex: 0 0 14%;
+  height: 6vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pink{
+  color: #e99c92;
+}
+
+.calendar>.num>.day>.point{
+  width: 12rpx;
+  height: 12rpx;
+  background-color: rgb(145, 145, 145);
+  border-radius: 100%;
+}
+
+.calendar image{
+  width: 50rpx;
+  height: 4vh;
+}
+
+// “星星”的隐藏和显示
+.show{
+  display: block;
+}
+
+.hidden{
+  display: none;
+}
+
+// 点击某一天
+.curday{
+  color: red;
+}
+
+// 活动
+.act{
+  margin: 0 55rpx;
+  background-color: rgb(233,233,233);
+  // height: 30vh;
+  border-radius: 40rpx;
+  margin-top: 3vh;
+  padding: 1vh 30rpx;
+}
+
+// 活动顶部：图案+日期
+.act>.topic{
+  display: flex;
+  align-items: center;
+}
+
+.act>.topic>.timeImg{
+  width: 90rpx;
+  height: 7vh;
+}
+
+.act>.topic>.date{
+  margin-left: 30rpx;
+  align-items: center;
+  display: flex;
+}
+
+.act>.topic>.date>view:nth-child(2){
+  margin: 0 20rpx;
+  font-size: 30rpx;
+}
+
+// 分割线
+.line{
+  background-color: rgb(77, 72, 72);
+  width: 100%;
+  height: 0.3vh;
+}
+
+.middle{
+  position: relative; // 便于子控件定位
+  display: flex;
+  align-items: center;
+  margin-top: 1.5vh;
+  height: auto;
+}
+
+// 活动完成：打勾
+.middle>.circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  height: 37rpx;
+  width: 37rpx;
+  font-size: 2.5vh;
+  border: 1px solid #DCC8CA;
+}
+
+// 活动完成：圆圈填充
+.finish{
+  background-color: #DCC8CA;
+  color: white;
+}
+
+.middle>navigator{
+  display: flex;
+  align-items: center;
+}
+
+// 活动标题
+.middle .font{
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  width: 340rpx;
+}
+
+// 活动完成：添加删除线
+.line-font{
+  text-decoration: line-through;
+}
+
+// 活动时间
+.middle .time{
+  // position: absolute;
+  margin-left: 30rpx;
+  font-size: 34rpx;
+}
+
+// “修改”图标
+.middle .icon{
+  // position: absolute;
+  // right: 15rpx;
+  margin-left: 20rpx;
+  width: 37rpx;
+  height: 37rpx;
+}
+
+.middle .icon>image{
+  width: 100%;
+  height: 100%;
+}
+
+// 活动链接
+.link{
+  display: flex;
+  width: 80%;
+  height: 10vh;
+  background: linear-gradient(to right, rgb(184,184,184), white);
+  border-radius: 40rpx;
+  margin: 3vh auto;
+  text-align: center;
+  line-height: 10vh;
+  font-weight: bold;
+}
+
+// 隐藏链接
+.disappear{
+  display: none;
+}
+
+// 活动链接-左半边
+.link>.left{
+  height: 100%;
+  width: 30%;
+  background-color: rgba(0,0,0,0);
+  border-right:1px solid white;
+}
+
+// 活动链接-右半边
+.link>.right{
+  height: 100%;
+  width: 70%;
+  background-color: rgba(0,0,0,0);
+}
+
+// 到达底部
+.empty{
+  // position: absolute;
+  // bottom: 0;
+  // width: 100%;
+  // margin: 4vh;
+  font-size: 22rpx;
+  color:rgb(145, 145, 145);
+  text-align: center;
+  margin-top: 4vh;
+}
+
+// 返回顶部按钮
+.to-top{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // position: fixed;
+  bottom: 10vh;
+  right: 0rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  border:rgb(184, 184, 184) solid 3rpx;
+  background-color: white;
+}
+
+.to-top>image{
+  height: 50%;
+  width: 50%;
+}
+

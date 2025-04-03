@@ -1,0 +1,53 @@
+<!--pages/actishow/actishow.wxml-->
+
+<!-- 点击显示按钮box -->
+<view class="point" bind:tap="onButtonShow">
+  ···
+</view>
+<!-- 活动标题 -->
+<view class="title">
+  {{title}}
+</view>
+
+<!-- 活动 -->
+<view class="acti">
+  <view class="pic">
+    <image src="/assets/activity/swiper2.jpg"></image>
+  </view>
+  <view class="topic">
+    活动内容
+  </view>
+</view>
+
+<!-- 点击右上角显示 按钮 -->
+<view class="button-box" hidden="{{ button_hidden }}">
+  <view bind:tap="addCollection">
+    <view class="button">
+      <view class="icon">
+        <image src="/assets/self/collection.png"></image>
+      </view>
+      <view class='font'>
+        加入我的收藏
+      </view>
+    </view>
+  </view>
+  <navigator url="{{'/subPackages/pages/remind-create/remind-create?title='+title}}" bind:tap="onButtonShow">
+    <view class="button">
+      <view class="icon">
+        <image src="/assets/self/remind.png"></image>
+      </view>
+      <view class="font">
+        设为定时提醒
+      </view>
+    </view>
+  </navigator>
+
+<!-- 取消显示按钮box -->
+  <view class="cancel" bind:tap="onButtonShow">
+    取消
+  </view>
+</view>
+
+<!-- 显示按钮box时,背景遮挡 -->
+<view class="board {{button_hidden ? 'hidden':'show'}}" bind:tap="onButtonShow">
+</view>
