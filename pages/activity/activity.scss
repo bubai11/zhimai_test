@@ -46,6 +46,19 @@ page {
     letter-spacing: 10rpx;
   }
   
+  .filter-section{
+    .filter-group{
+      display: flex;
+      margin-left: 40rpx;
+      .filter-item{
+        margin-right: 40rpx;
+        &.active{
+          color: red;
+        }
+      }
+    }
+  }
+
   .new-act{
     height:25vh;
   }

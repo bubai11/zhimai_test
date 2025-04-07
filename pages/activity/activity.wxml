@@ -32,8 +32,8 @@
   </view>
 </view>
 
-<!-- 最新活动-顶部滚动 -->
-<view class="new-act" wx:if="{{actList.length > 0}}">
+<!-- 最新活动-顶部轮播图（经讨论，不使用） -->
+<!-- <view class="new-act" wx:if="{{actList.length > 0}}">
   <swiper class="new-act" previous-margin='190rpx' next-margin='190rpx' bindchange="swiperChange" style='height:{{swiperHeight}}' circular>
     <swiper-item wx:for='{{actList}}' wx:key='activity_id' wx:if="{{index < 5}}">
       <navigator url="/subPackages/pages/actishow/actishow?id={{item.activity_id}}">
@@ -41,7 +41,7 @@
       </navigator>
     </swiper-item>
   </swiper>
-</view>
+</view> -->
 
 <!-- 所有活动,分奇偶两列 -->
 <view class="act-box">
