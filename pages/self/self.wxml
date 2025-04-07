@@ -143,17 +143,17 @@
 
 <!-- 登录弹窗 -->
 <view class="loginbox {{showLogin ? 'show':'hidden'}}">
-  <view class="login-header">
+  <!-- <view class="login-header">
     <view class="login-title">欢迎登录</view>
     <view class="login-subtitle">请选择头像并设置昵称</view>
-  </view>
+  </view> -->
   
   <view class="login-content">
     <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
       <image class="avatar" src="{{tempUserInfo.avatarUrl}}"></image>
       <view class="avatar-tip">
         <text class="iconfont icon-camera"></text>
-        <text>点击更换头像</text>
+        <text class="text">点击更换头像</text>
       </view>
     </button>
 

@@ -22,7 +22,7 @@
   <!-- 重要通知下方的轮播 -->
   <swiper class="swiper" indicator-dots>
     <!-- indicator-active-color="#4F4F57" -->
-    <swiper-item>
+    <swiper-item class="swiper-item">
       <view class='box' wx:for="{{ 3 }}" wx:key="index">
         {{swiper[index]}}
       </view>
@@ -66,6 +66,35 @@
 
   </view>
 </view> -->
+
+<view class="info-list">
+  <view class="info-box">
+    <view class="block">
+      端午节放假通知
+    </view>
+  </view>
+  <view class="info-box">
+    <view class="block">
+      清明节放假通知
+    </view>
+  </view>
+  <view class="info-box">
+    <view class="block">
+      校园跑通知
+    </view>
+  </view>
+  <view class="info-box">
+    <view class="block">
+      停水通知
+    </view>
+  </view>
+  <view class="info-box">
+    <view class="block">
+      停电通知
+    </view>
+  </view>
+
+</view>
 
 <!-- 到达底部 -->
 <view class="empty">
