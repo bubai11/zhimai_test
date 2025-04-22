@@ -6,7 +6,7 @@ Page({
    */
   data: {
     button_hidden: true,
-    title: '活动标题'
+    title: '"感悟青年力量"之五四故事决赛'
   },
 
   /**

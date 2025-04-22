@@ -55,5 +55,6 @@
     "ignore": [],
     "include": []
   },
-  "appid": "wxc32918dac4588fbb"
+  "appid": "wxc32918dac4588fbb",
+  "libVersion": "3.8.0"
 }

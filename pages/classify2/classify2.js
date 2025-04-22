@@ -32,22 +32,23 @@ Page({
         list: ['不限', '金投院', '会计学院', '保险学院', '财新院', '国家金融学学院', '金统院', '国教院', '大数据院', '工管院', '法学院', '外文院', '创业教育学院', '经贸院'],
         choose: [true, false, false, false, false, false, false, false, false, false, false, false, false, false],
         choosecount: 0,
-      },{
-        title: 'four',
-        list: [0,1,2,3,4,5,6,7],
-        choose: [true,false,false,false,false,false,false,false],
-        choosecount: 0,
-      },{
-        title: 'four',
-        list: [0,1,2,3,4,5,6,7],
-        choose: [true,false,false,false,false,false,false,false],
-        choosecount: 0,
-      },{
-        title: 'four',
-        list: [0,1,2,3,4,5,6,7],
-        choose: [true,false,false,false,false,false,false,false],
-        choosecount: 0,
-      }
+      },
+      // {
+      //   title: 'four',
+      //   list: [0,1,2,3,4,5,6,7],
+      //   choose: [true,false,false,false,false,false,false,false],
+      //   choosecount: 0,
+      // },{
+      //   title: 'four',
+      //   list: [0,1,2,3,4,5,6,7],
+      //   choose: [true,false,false,false,false,false,false,false],
+      //   choosecount: 0,
+      // },{
+      //   title: 'four',
+      //   list: [0,1,2,3,4,5,6,7],
+      //   choose: [true,false,false,false,false,false,false,false],
+      //   choosecount: 0,
+      // }
     ],
     // 当前选中的左菜单选项
     leftIndex: 0,

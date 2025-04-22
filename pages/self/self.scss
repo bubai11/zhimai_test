@@ -97,8 +97,9 @@
 
 // 服务中心
 .serve-center {
+  margin-top: 1vh;
   box-sizing: border-box;
-  height: 25.5vh;
+  height: 24vh;
   padding: 1vh 20rpx;
 }
 
@@ -110,7 +111,7 @@
 // 服务中心-按钮
 .serve-center>.button-box {
   width: 710rpx;
-  height: 17.5vh;
+  height: 180rpx;
   background-color: rgb(223, 223, 223);
   border-radius: 40rpx;
 }

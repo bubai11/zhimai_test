@@ -11,12 +11,33 @@
 
 <!-- 活动 -->
 <view class="acti">
-  <view class="pic">
-    <image src="/assets/activity/swiper2.jpg"></image>
+    <image class="pic" src="/subPackages/assets/1.jpg" mode="aspectFit"></image>
+  <view class="content">
+    <view class="label">活动时间</view>
+    <view class="item">2025.04.07 - 2025.04.12</view>
   </view>
-  <view class="topic">
-    活动内容
+  <view class="content">
+    <view class="label">校区</view>
+    <view class="item">清远校区</view>
   </view>
+  <view class="content">
+    <view class="label">二课类型</view>
+    <view class="item">文体学分</view>
+  </view>
+  <view class="content">
+    <view class="label">活动级别</view>
+    <view class="item">校级</view>
+  </view>
+  <view class="content">
+    <view class="label">参与年级</view>
+    <view class="item">23级、24级</view>
+  </view>
+  <view class="content">
+    <view class="label">活动链接</view>
+    <view class="item">https://apph5.5idream.net/share/activity?share=0DD39D5A0DA53EC2AA7E675848
+    7AF594</view>
+  </view>
+
 </view>
 
 <!-- 点击右上角显示 按钮 -->
