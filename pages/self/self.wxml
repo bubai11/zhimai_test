@@ -7,7 +7,7 @@
     <image src="/assets/self/basic-face.png"></image>
   </button> -->
   <view class="face" bind:tap="tapFace">
-    <image src="{{userInfo.avatarUrl}}"></image>
+    <image src="{{userInfo.avatarUrl?userInfo.avatarUrl:'/assets/self/basic-face.png'}}"></image>
   </view>
   <view class="font">
     <view class="login {{isLoggedIn?'hidden':'show'}}" bind:tap="showLogin">

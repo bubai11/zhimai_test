@@ -12,32 +12,33 @@
 // 活动标题
 .title{
   float: left;
-  margin: 0 70rpx;
+  margin-left: 70rpx;
   padding-top: 3vh;
   font-weight: bold;
-  // background-color: aquamarine;
+  font-size: 37rpx;
 }
 
 // 活动
 .acti{
-  float:right;
-  margin: 2vh 70rpx;
-}
-
-.acti>.pic{
-  height: 40vh;
-  width: 610rpx;
-}
-
-.acti>.pic>image{
-  border-radius: 30rpx;
-  width: 100%;
-  height: 100%;
-}
-
-.acti>.topic{
-  margin: 2vh 0;
-  text-align: center;
+  margin: 1vh 70rpx;
+  .pic{
+    height: 350rpx;
+    // width: 610rpx;
+    object-fit: contain;
+    margin-bottom: 1.5vh;
+    border-radius: 30rpx;
+  }
+  .content{
+    margin-top: 30rpx;
+    .label{
+      font-size: 36rpx;
+      font-weight: 600;
+    }
+    .item{
+      margin-top: 15rpx;
+      width: 610rpx;
+    }
+  }
 }
 
 // 按钮

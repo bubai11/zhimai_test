@@ -5,7 +5,47 @@ Page({
     // 最新活动 轮播图
     swiperHeight: '',
     nowIndex: 0,
-    actList: [], // 活动列表
+    actList: [{
+        pic: '/assets/activity/1.jpg',
+        status: '进行中',
+        title: '"感悟青年力量"之五四故事决赛'
+      },
+      {
+        pic: '/assets/activity/2.jpg',
+        status: '进行中',
+        title: '红会知行·技能赋能之旅'
+      },
+      {
+        pic: '/assets/activity/3.jpg',
+        status: '进行中',
+        title: '“金子之光”校友报告'
+      },
+      {
+        pic: '/assets/activity/4.jpg',
+        status: '已结束',
+        title: '2025春之记忆之“易”起绘春章——手账作品征集活动'
+      },
+      {
+        pic: '/assets/activity/5.jpg',
+        status: '已结束',
+        title: '第十四届“胜券在握”金融理财大赛宣讲会'
+      },
+      {
+        pic: '/assets/activity/6.jpg',
+        status: '已结束',
+        title: '2025新语征文比赛'
+      },
+      {
+        pic: '/assets/activity/7.jpg',
+        status: '已结束',
+        title: '第十五届“医”路求知，“疗”在实践医疗知识竞赛初赛'
+      },
+      {
+        pic: '/assets/activity/8.jpg',
+        status: '已结束',
+        title: '第十一届资信杯'
+      }
+    ], // 活动列表
     loading: false,
     // 回到顶部 按钮
     back_top: 0,
@@ -22,7 +62,7 @@ Page({
   async fetchActivities() {
     try {
       this.setData({ loading: true });
-      
+
       // 使用传统的wx.request替代云函数调用
       wx.request({
         url: 'http://localhost:3000/api/activities', // 本地开发环境
@@ -93,7 +133,7 @@ Page({
   },
 
   // 最新活动 轮播图
-  getHeight: function(e) {
+  getHeight: function (e) {
     var winWidth = wx.getSystemInfoSync().windowWidth - 260;
     var imgHeight = e.detail.height;
     var imgWidth = e.detail.width;
@@ -103,7 +143,7 @@ Page({
     })
   },
 
-  swiperChange: function(e) {
+  swiperChange: function (e) {
     this.setData({
       nowIndex: e.detail.current
     })
@@ -141,6 +181,6 @@ Page({
   },
 
   onLoad() {
-    this.fetchActivities();
+    // this.fetchActivities();
   }
 });
