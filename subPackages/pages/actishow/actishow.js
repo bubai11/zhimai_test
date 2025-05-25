@@ -6,7 +6,17 @@ Page({
    */
   data: {
     button_hidden: true,
-    title: '"感悟青年力量"之五四故事决赛'
+    title: '"感悟青年力量"之五四故事决赛',
+    activities: [
+      {
+        time: '2025.04.07 - 2025.04.12',
+        zone: '清远校区',
+        type : '文体学分',
+        level: '校级',
+        grade: ['2023','2024'],
+        link: 'https://apph5.5idream.net/share/activity?share=0DD39D5A0DA53EC2AA7E675848'
+      }
+    ]
   },
 
   /**

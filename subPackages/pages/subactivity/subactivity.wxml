@@ -1,0 +1,13 @@
+<view class="act-box">
+    <navigator class="box" wx:for="{{ actList }}" wx:key="activity_id" url="/subPackages/pages/actishow/actishow?id={{item.activity_id}}">
+      <image class="pic" src="{{item.pic}}" mode="aspectFill" lazy-load="{{true}}"/>
+      <view class="info-box">
+        <view class="topic">{{item.title}}</view>
+        <view class="details">
+          <view class="status-tag {{item.status === '进行中' ? 'ongoing' : 'ended'}}">
+          {{item.status}}
+        </view>
+        </view>
+      </view>
+    </navigator>
+</view>

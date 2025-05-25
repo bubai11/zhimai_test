@@ -17,9 +17,9 @@
   // 左菜单选项
   .left-item{
     color: gray;
-    height: 8vh;
     text-align: center;
-    line-height: 8vh;
+    height: 110rpx;
+    line-height: 110rpx;
 
     // 当前选中
     &.active{
@@ -38,7 +38,7 @@
   }
   // 右菜单选项
   .right-item{
-    padding: 3vh 20rpx 0;
+    padding: 50rpx 20rpx 0;
 
     // 分类标题
     .title{
@@ -80,14 +80,17 @@
 // “重置”和“确认”按钮
 .button-box{
   position: fixed;
-  bottom: 0vh;
+  bottom: 0;
   width: 100vw;
+  height: 7vh;
+  box-sizing: border-box;
   view{
     text-align: center;
     font-size: 30rpx;
     background-color: rgb(206, 206, 206);
     width: 50%;
-    padding: 2vh 0;
+    height: 7vh;
+    line-height: 7vh;
   }
   .reset{
     float: left;

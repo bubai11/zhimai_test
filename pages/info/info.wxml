@@ -22,78 +22,21 @@
   <!-- 重要通知下方的轮播 -->
   <swiper class="swiper" indicator-dots>
     <!-- indicator-active-color="#4F4F57" -->
-    <swiper-item class="swiper-item">
-      <view class='box' wx:for="{{ 3 }}" wx:key="index">
-        {{swiper[index]}}
-      </view>
-    </swiper-item>
-    <swiper-item>
-      <view class="box" wx:for="{{ 3 }}" wx:key="index">
-        {{swiper[index+3]}}
+    <swiper-item class="swiper-item" wx:for="{{ swiper.length / 3 }}" wx:key="outIndex" wx:for-index="outIndex">
+      <view class='box' wx:for="{{ 3 }}" wx:key="item" wx:for-index="inIndex">
+        {{swiper[outIndex * 3 + inIndex]}}
       </view>
     </swiper-item>
   </swiper>
 </view>
 
-<!-- 校园资讯 -->
-<!-- <view class="school-info">
-  <view class="top">
-    <view class="title">
-      校园资讯
-    </view> -->
-    <!-- 分割线 -->
-    <!-- <view class="seperate">
-      <view class="point"></view>
-      <view class="line"></view>
-      <view class="point"></view>
-    </view>
-  </view> -->
-  <!-- 活动列表: 公众号头像、公众号名称、文章标题 -->
-  <!-- <view class="info-box">
-    <navigator class="info" wx:for="{{ infoList }}" wx:key="index" url="/subPackages/pages/actishow/actishow">
-      <view class="top">
-        <view class="face">
-        </view>
-        <view class="name">
-        </view>
-      </view>
-
-      <view class="content">
-      </view>
-      <view class="topic">
-      </view>
-    </navigator>
-
-  </view>
-</view> -->
-
 <view class="info-list">
-  <view class="info-box">
-    <view class="block">
-      端午节放假通知
-    </view>
+  <view class="info-box" wx:for="{{ activities }}" wx:key="index">
+    <!-- <view class="block">
+      {{ item }}
+    </view> -->
+    <image class="info-img" src="/assets/info/infomation.jpg" mode="scaleToFill"/>
   </view>
-  <view class="info-box">
-    <view class="block">
-      清明节放假通知
-    </view>
-  </view>
-  <view class="info-box">
-    <view class="block">
-      校园跑通知
-    </view>
-  </view>
-  <view class="info-box">
-    <view class="block">
-      停水通知
-    </view>
-  </view>
-  <view class="info-box">
-    <view class="block">
-      停电通知
-    </view>
-  </view>
-
 </view>
 
 <!-- 到达底部 -->

@@ -154,5 +154,12 @@ Page({
         return ;
       }
     }
+   },
+
+   // 点击确认
+   Onsearch () {
+     wx.navigateTo({
+       url: '/subPackages/pages/subactivity/subactivity',
+     })
    }
 })

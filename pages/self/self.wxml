@@ -2,10 +2,6 @@
 
 <!-- 顶部个人信息 -->
 <view class="top">
-  <!-- 头像 -->
-  <!-- <button class="face" open-type="chooseAvatar" bind:tap="tapFace">
-    <image src="/assets/self/basic-face.png"></image>
-  </button> -->
   <view class="face" bind:tap="tapFace">
     <image src="{{userInfo.avatarUrl?userInfo.avatarUrl:'/assets/self/basic-face.png'}}"></image>
   </view>

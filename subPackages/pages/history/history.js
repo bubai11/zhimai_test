@@ -9,19 +9,19 @@ Page({
     actList: [
       {
         title: '标题1', classify: '分类1', time: '时间1',
-        img: '/assets/activity/swiper1.jpg',
+        img: '/assets/activity/1.jpg',
         timeShow: ''
       },
       {
-        title: '标题2', classify: '分类2', time: '时间2', img: '/assets/activity/swiper2.jpg',
+        title: '标题2', classify: '分类2', time: '时间2', img: '/assets/activity/2.jpg',
         timeShow: ''
       },
       {
-        title: '标题3', classify: '分类3', time: '时间2', img: '/assets/activity/swiper3.jpg',
+        title: '标题3', classify: '分类3', time: '时间2', img: '/assets/activity/3.jpg',
         timeShow: ''
       },
       {
-        title: '标题4', classify: '分类4', time: '时间3', img: '/assets/activity/swiper4.jpg',
+        title: '标题4', classify: '分类4', time: '时间3', img: '/assets/activity/4.jpg',
         timeShow: ''
       },
     ],

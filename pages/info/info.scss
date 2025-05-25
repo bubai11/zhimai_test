@@ -2,19 +2,17 @@
 
  //顶部按钮+搜索框
  .top{
-    // height:100rpx;
-    height: 9vh;
     display: flex;
-    // background-color:blue;
   }
   
   // 顶部按钮
   .top>.classify{
-    // float:left;
-    font-size:22rpx;
+    font-size:25rpx;
+    height: 105rpx;
+    line-height: 105rpx;
     background-color: rgb(223, 223, 223);
     border-radius: 30rpx;
-    padding:3vh 20rpx;
+    padding: 0 20rpx;
     text-align: center;
   } 
   
@@ -22,7 +20,7 @@
   .search{
     position: absolute;
     right: 15rpx;
-    top: 2vh;
+    top: 30rpx;
   }
   .search>image{
     width:50rpx;
@@ -32,33 +30,30 @@
   
   // 置顶通知
   .important-info{
-    // height:400rpx;
-    height: 30vh;
-    // background-color: blueviolet;
+    height: 380rpx;
+    margin-top: 30rpx;
   } 
   
   // 重要通知
   .important-info>.important{
     display: flex;
-    height: 15vh;
-    // background-color: aquamarine;
+    height: 180rpx;
   } 
   
   .important>.box{
     margin:auto;
     width: 700rpx;
-    height: 13vh;
+    height: 160rpx;
     background-color: rgb(223, 223, 223);
     border-radius: 40rpx;
     // 文字居中
     font-size:30rpx;
     text-align: center;
-    line-height: 12vh;
+    line-height: 160rpx;
   }
   
   .important-info>.swiper{
-    height: 18vh;
-    // display: flex;
+    height: 235rpx;
   }
   
   .swiper-item{
@@ -69,12 +64,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 170rpx;
-      height: 6vh;
+      width: 270rpx;
+      height: 163rpx;
       background-color: rgb(223, 223, 223);
       border-radius: 30rpx;
-      margin:1vh 20rpx;
-      padding:3vh 20rpx;
+      margin: 15rpx 20rpx;
+      padding: 40rpx 20rpx;
+      box-sizing: border-box;
     
       font-size:25rpx;
       text-align: center;
@@ -105,97 +101,21 @@
 
   // 重要通知列表
   .info-list{
-    margin-top: 3vh;
+    margin-top: 40rpx;
     width: 100%;
     box-sizing: border-box;
     padding: 0 30rpx;
     .info-box{
       width: 100%;
-      height: 15vh;
-      .block{
-        height: 13vh;
-        background-color: rgb(223, 223, 223);
-        border-radius: 20rpx;
-        text-align: center;
-        line-height: 13vh;
+      height: 300rpx;
+      margin-top: 30rpx;
+      .info-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10rpx;
+        border: 3rpx solid rgb(145, 145, 145);
       }
     }
-  }
-  
-  // 校园资讯
-  .school-info>.top{
-    height: 9vh;
-  }
-  
-  .school-info>.top>.title{
-    height: 2vh;
-    font-size:22rpx;
-    background-color: rgb(223, 223, 223);
-    border-radius: 30rpx;
-    padding:3.5vh 27rpx;
-    text-align: center;
-    line-height: 2vh;
-  }
-  
-  .seperate{
-    height: 9vh;
-    display: flex;
-    align-items: center;
-  }
-  
-  .seperate>.point{
-    width: 10rpx;
-    height: 10rpx;
-    border-radius: 100%;
-    border:black solid 1rpx;
-    // margin:auto;
-  }
-  
-  .seperate>.line{
-    background-color: black;
-    width:583rpx;
-    height:4rpx;
-  }
-  
-  .info{
-    // display: inline-block;
-    // display: flex;
-    height: 25vh;
-    margin: 2vh 50rpx;
-  }
-  
-  .info>.top>.face{
-    // float: left;
-    width:80rpx;
-    height:80rpx;
-    border-radius: 100%;
-    background-color: rgb(223, 223, 223);
-  }
-  
-  .info>.top>.name{
-    // float: left;
-    width: 450rpx;
-    height: 5vh;
-    margin: 1.3vh 0;
-    margin-left: 50rpx;
-    border-radius: 40rpx;
-    background-color: rgb(223, 223, 223);
-  }
-  
-  .info>.content{
-    height: 11vh;
-    width: 650rpx;
-    border-radius: 30rpx;
-    background-color: rgb(223, 223, 223);
-  }
-  
-  .info>.topic{
-    height: 3vh;
-    width: 600rpx;
-    margin: 2vh auto;
-    // margin-top:2vh;
-    border-radius: 15rpx;
-    background-color: rgb(223, 223, 223);
   }
   
   // 到达底部
@@ -203,7 +123,7 @@
     font-size: 22rpx;
     color:rgb(145, 145, 145);
     text-align: center;
-    margin-top: 4vh;
+    margin-top: 50rpx;
   }
   
   // 返回顶部按钮
@@ -213,7 +133,7 @@
     justify-content: center;
     align-items: center;
     // position: fixed;
-    bottom: 10vh;
+    bottom: 100rpx;
     right: 0rpx;
     width: 80rpx;
     height: 80rpx;

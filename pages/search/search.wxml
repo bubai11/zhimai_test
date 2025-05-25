@@ -25,9 +25,10 @@
     <view class="title">
       历史记录
     </view>
-    <view class="font {{deleteHidden?'hidden':'show'}}" hover-class="font-hover" bind:tap="deleteAll">全部删除</view>
+    <view class="font all {{deleteHidden?'hidden':'show'}}" hover-class="font-hover" bind:tap="deleteAll">全部删除</view>
     <!-- "删除"图标 -->
-    <image src="/assets/search/delete.png" bind:tap="onDeleteHistory" />
+    <image src="/assets/search/delete.png" bind:tap="onDeleteHistory" wx:if="{{ deleteHidden }}" />
+    <view wx:if="{{ !deleteHidden }}" class="font finish" bind:tap="onDeleteHistory" >完成</view>
   </view>
   <view class="history-list">
     <view class="item" wx:for="{{ historyList }}" wx:key="index" bind:tap="{{deleteHidden?'clickhistory':none}}" data-set="{{item}}">

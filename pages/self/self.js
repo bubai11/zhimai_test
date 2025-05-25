@@ -10,7 +10,7 @@ Page({
       // 间隔时间
       interval: '',
       // 通知列表
-      contentList: ['虽有佳肴', '南辕北辙', '芳草萋萋，落英缤纷', '君不见黄河之水天上来，奔流到海不复还。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。'],
+      contentList: ['"感悟青年力量"之五四故事决赛', '红会知行·技能赋能之旅', '“金子之光”校友报告'],
       // 通知列表索引
       index: 0,
   
@@ -165,13 +165,13 @@ Page({
     },
 
     beforeNavigator(e){
-      if (this.data.isLoggedIn){
+      // if (this.data.isLoggedIn){
         var url = e.currentTarget.dataset.set;
         wx.navigateTo({
           url: url,
         })
-      }
-      else this.showLogin();
+      // }
+      // else this.showLogin();
     },
   
     /**

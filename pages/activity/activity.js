@@ -5,58 +5,118 @@ Page({
     // 最新活动 轮播图
     swiperHeight: '',
     nowIndex: 0,
-    actList: [{
+    actList: [
+      {
         pic: '/assets/activity/1.jpg',
         status: '进行中',
-        title: '"感悟青年力量"之五四故事决赛'
+        title: '"感悟青年力量"之五四故事决赛',
+        type: 'assess',
       },
       {
         pic: '/assets/activity/2.jpg',
         status: '进行中',
-        title: '红会知行·技能赋能之旅'
+        title: '红会知行·技能赋能之旅',
+        type: 'credit',
       },
       {
         pic: '/assets/activity/3.jpg',
         status: '进行中',
-        title: '“金子之光”校友报告'
+        title: '“金子之光”校友报告',
+        type: 'assess',
       },
       {
         pic: '/assets/activity/4.jpg',
-        status: '已结束',
-        title: '2025春之记忆之“易”起绘春章——手账作品征集活动'
+        status: '进行中',
+        title: '2025春之记忆之“易”起绘春章——手账作品征集活动',
+        type: 'credit',
       },
       {
         pic: '/assets/activity/5.jpg',
-        status: '已结束',
-        title: '第十四届“胜券在握”金融理财大赛宣讲会'
+        status: '进行中',
+        title: '第十四届“胜券在握”金融理财大赛宣讲会',
+        type: 'credit',
       },
       {
         pic: '/assets/activity/6.jpg',
-        status: '已结束',
-        title: '2025新语征文比赛'
+        status: '进行中',
+        title: '2025新语征文比赛',
+        type: 'all',
       },
       {
         pic: '/assets/activity/7.jpg',
-        status: '已结束',
-        title: '第十五届“医”路求知，“疗”在实践医疗知识竞赛初赛'
+        status: '进行中',
+        title: '第十五届“医”路求知，“疗”在实践医疗知识竞赛初赛',
+        type: 'all',
       },
       {
         pic: '/assets/activity/8.jpg',
+        status: '进行中',
+        title: '第十一届资信杯',
+        type: 'credit',
+      },
+      {
+        pic: '/assets/activity/act.jpg',
         status: '已结束',
-        title: '第十一届资信杯'
-      }
+        title: 'test',
+        type: 'all',
+      },
+      {
+        pic: '/assets/activity/act.jpg',
+        status: '已结束',
+        title: 'test',
+        type: 'all',
+      },
+      {
+        pic: '/assets/activity/act.jpg',
+        status: '已结束',
+        title: 'test',
+        type: 'all',
+      },
+      {
+        pic: '/assets/activity/act.jpg',
+        status: '已结束',
+        title: 'test',
+        type: 'all',
+      },
+      {
+        pic: '/assets/activity/act.jpg',
+        status: '已结束',
+        title: 'test',
+        type: 'all',
+      },
+      {
+        pic: '/assets/activity/act.jpg',
+        status: '已结束',
+        title: 'test',
+        type: 'all',
+      },
     ], // 活动列表
+    actShowList: [],
+    activity_type: 'all',
     loading: false,
     // 回到顶部 按钮
     back_top: 0,
     isTop: false,
     // 筛选条件
     filters: {
-      activity_type: '', // 二课/综测/二课综测
+      activity_type: 'all', // 二课/综测/二课综测
       credit_type: '',   // 活动板块
-      status: '进行中'    // 默认显示进行中的活动
+      status: 'all'    // 默认显示进行中的活动
     }
   },
+
+  // observers:{
+  //   'activity_type' : function(type, value) {
+  //     console.log('sss',type,value)
+  //   }
+  // },
+
+  // getActList () {
+  //   console.log('test')
+  //   return this.actList.filter(
+  //     item => item.type === 'all' || this.activity_type 
+  //   )
+  // },
 
   // 获取活动列表
   async fetchActivities() {
@@ -126,10 +186,25 @@ Page({
   filterActivities(e) {
     const { type, value } = e.currentTarget.dataset;
     this.setData({
-      ['filters.' + type]: value
-    }, () => {
-      this.fetchActivities();
-    });
+      activity_type: value
+    })
+
+    let {actList, activity_type} = this.data
+    let actShowList
+    switch (activity_type) {
+      case 'all':
+        actShowList = actList; break;
+      case 'credit':
+        actShowList = actList.filter(item => item.type === 'credit' || item.type === 'all'); break;
+      case 'assess':
+        actShowList = actList.filter(item => item.type === 'assess' || item.type === 'all'); break;
+    }
+    // this.fetchActivities();
+
+    this.setData({
+      activity_type: value,
+      actShowList
+    })
   },
 
   // 最新活动 轮播图
@@ -182,5 +257,8 @@ Page({
 
   onLoad() {
     // this.fetchActivities();
+    this.setData({
+      actShowList: this.data.actList
+    })
   }
 });

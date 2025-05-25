@@ -3,9 +3,9 @@
 // 顶部个人信息
 .top {
   display: flex;
-  padding: 1.2vh 20rpx;
+  padding: 15rpx 20rpx;
   box-sizing: border-box;
-  height: 14vh;
+  height: 160rpx;
 }
 
 // 头像
@@ -25,13 +25,11 @@
 }
 
 .top>.font {
-  // box-sizing: border-box;
   width: 400rpx;
   margin-left: 30rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // align-items: center;
 }
 
 // 名字
@@ -42,8 +40,7 @@
 // 校区
 .top>.font>.school-zone {
   font-size: 27rpx;
-  margin-top: 1vh;
-  // margin-left:40rpx;
+  margin-top: 15rpx;
 }
 
 // “编辑资料”按钮
@@ -51,9 +48,10 @@
   font-size: 27rpx;
   background-color: rgb(223, 223, 223);
   border-radius: 30rpx;
-  padding: 2vh 25rpx;
-  height: 3.5vh;
-  margin-top: 2vh;
+  padding: 25rpx 25rpx;
+  height: 40rpx;
+  // height: 3.5vh;
+  margin-top: 20rpx;
 }
 
 // 通知

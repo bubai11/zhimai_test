@@ -54,7 +54,7 @@
           </view>
         </view>
         <view class="right">
-          <image src="{{item.img}}"></image>
+          <image src="{{item.img}}" mode="aspectFill"></image>
         </view>
       </view>
     </view>

@@ -118,12 +118,23 @@ Page({
       historyList, title
     } = this.data;
     if (title) {
-      historyList.push(title);
+      wx.navigateTo({
+        url: '/subPackages/pages/subactivity/subactivity',
+      })
+      historyList.unshift(title);
       this.setData({
         historyList: historyList
       })
+      this.setData({
+        title: ''
+      })
     }
-
+    else{
+      wx.showToast({
+        title: '内容不能为空',
+        icon: 'error'
+      })
+    }
   },
 
   // 点击历史记录下的控件

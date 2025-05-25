@@ -3,7 +3,6 @@
     "pages/info/info",
     "pages/activity/activity",
     "pages/self/self",
-    "pages/classify/classify",
     "pages/search/search",
     "pages/classify2/classify2"
   ],
@@ -12,14 +11,15 @@
       "root": "subPackages",
       "name": "subPackages",
       "pages": [
-        "pages/classify2/classify2",
         "pages/history/history",
         "pages/collection/collection",
         "pages/remind/remind",
         "pages/remind-create/remind-create",
         "pages/actishow/actishow",
         "pages/individual-edit/individual-edit",
-        "pages/AccountAndSafe/AccountAndSafe"
+        "pages/AccountAndSafe/AccountAndSafe",
+        "pages/infoshow/infoshow",
+        "pages/subactivity/subactivity"
       ]
     }
   ],
