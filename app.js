@@ -18,6 +18,7 @@ App({
   onLaunch() {
     // 启动时检查登录状态
     const token = wx.getStorageSync('token');
+    console.log('token', token);
     if (token) {
       this.checkTokenAndGetUserInfo(token);
     }
@@ -31,7 +32,7 @@ App({
       this.globalData.isProfileComplete = userInfo.status === 'active';
 
       // 如果用户状态是 pending，提示完善信息
-      if (userInfo.status === 'pending') {
+      if (userInfo.status === 'inactive') {
         wx.showModal({
           title: '完善信息',
           content: '请完善个人信息以激活账户',
@@ -62,33 +63,39 @@ App({
             reject(new Error('无网络连接'));
             return;
           }
-          
+
           wx.login({
             success: (loginRes) => {
               if (loginRes.code) {
                 console.log('获取code成功：', loginRes.code);
-                
+
                 wx.request({
-                  url: `${this.globalData.serverUrl}/login`,
+                  url: `${this.globalData.serverUrl}/user/wx-login`,
                   method: 'POST',
+                  timeout: 10000, 
                   data: {
                     code: loginRes.code,
                     avatarUrl: this.globalData.tempUserInfo.avatarUrl,
                     nickname: this.globalData.tempUserInfo.nickname
                   },
                   success: (res) => {
-                    if (res.data.success) {
-                      console.log('登录成功：', res.data);
-                      this.globalData.openId = res.data.openId;
-                      this.globalData.userInfo = res.data.userInfo;
+                    if (res.data.code === 200) {
+                      const loginData = res.data.data;
+                      console.log('登录成功：', loginData);
+
+                      this.globalData.openId = loginData.openId;
+                      this.globalData.userInfo = loginData.userInfo;
                       this.globalData.isLoggedIn = true;
-                      wx.setStorageSync('token', res.data.token);
-                      
+                      wx.setStorageSync('token', loginData.token);
+                      // 保存 token
+                      console.log('登录成功，token:', loginData.token);
+
+
                       // 检查用户状态
-                      this.globalData.isProfileComplete = res.data.userInfo.status === 'active';
-                      
+                      this.globalData.isProfileComplete = loginData.userInfo.status === 'active';
+
                       // 如果用户状态是 inactive 或 pending，提示完善信息
-                      if (res.data.userInfo.status !== 'active') {
+                      if (loginData.userInfo.status !== 'active') {
                         wx.showModal({
                           title: '完善信息',
                           content: '请完善个人信息以激活账户',
@@ -102,8 +109,8 @@ App({
                           }
                         });
                       }
-                      
-                      resolve(res.data);
+
+                      resolve(loginData);
                     } else {
                       reject(new Error(res.data.message || '登录失败'));
                     }
@@ -145,7 +152,7 @@ App({
           'Authorization': `Bearer ${token}`
         },
         success: (res) => {
-          if (res.data.success) {
+          if (res.data.code === 200) {
             this.globalData.userInfo = res.data.userInfo;
             this.globalData.isProfileComplete = res.data.userInfo.status === 'active';
             resolve(res.data.userInfo);
@@ -191,13 +198,13 @@ App({
       }
 
       wx.request({
-        url: `${this.globalData.serverUrl}/user/${this.globalData.openId}/logout`,
+        url: `${this.globalData.serverUrl}/user/${this.globalData.openId}/logout`,//修改为不用带id
         method: 'POST',
         header: {
           'Authorization': `Bearer ${token}`
         },
         success: (res) => {
-          if (res.data.success) {
+          if (res.data.code === 200) {
             this.clearUserData();
             resolve();
           } else {
@@ -232,7 +239,7 @@ App({
           'Authorization': `Bearer ${token}`
         },
         success: (res) => {
-          if (res.data.success) {
+          if (res.data.code === 200) {
             this.clearUserData();
             resolve();
           } else {

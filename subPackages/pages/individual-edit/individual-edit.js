@@ -391,7 +391,7 @@ Page({
         console.log('Debug - Response:', res.data);
         wx.hideLoading();
         
-        if (res.data.success) {
+        if (res.data.code === 200) {
     wx.showToast({
       title: '保存成功',
       icon: 'success',
